@@ -1,0 +1,6 @@
+body {min-width:860px;}
+* +html .container .box {width:24.99%;}
+* +html footer .bottom-info li {
+	background:url(../images/sep-01.gif) no-repeat 100% 5px;
+	padding:0 2px 0 3px;
+}

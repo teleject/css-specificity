@@ -1,32 +1,467 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<meta name="generator" content="Adobe GoLive" />
-		<title>CSS Specificity</title>
-		<style type="text/css">
-		@import url(http://fonts.googleapis.com/css?family=Devonshire);
-		h1 {
-			font-family: 'Devonshire', cursive;
-			font-size: 8em;
-			text-align: center;
-		}
-		body {
-			margin-top: 12em;
-		}
-		
-		</style>
-	</head>
-
-	<body>
-		<div id="outline">
-			<!-- All work and no play -->
-			<h1>Coming <i>very</i> Soon</h1>
-			
-		</div>
-		
-	</body>
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Specificity</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<link rel="stylesheet" media="all" type="text/css" href="css/ie.css">
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/equal-height.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<strong class="logo"><a href="http://CSSSpecificity.com">CSS Specificity</a></strong>
+			<div class="block">
+				<img src="images/img-01.png" alt="#">
+				<div class="box">
+					<strong>with icons inspired by "The Shining"</strong>
+					<a href="http://CSSSpecificity.com">cssspecificity.com</a>
+				</div>
+			</div><!-- block -->
+		</header><!-- header -->
+		<div class="container">
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-02.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>universal selector</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 0 - 0</span>
+							<p><img src="images/ico-01.png" alt="#"></p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-03.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>1 element</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 0 - 1</span>
+							<p>div</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-04.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>2 elements</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 0 - 2</span>
+							<p>li &#62; ul</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-05.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>9 elements</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 0 - 9</span>
+							<p>body div ... ul li p a</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-06.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>1 class</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 0</span>
+							<p>.myclass</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-07.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>1 universal selector</li>
+									<li>1 class</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 0</span>
+							<p>*.myclass</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-07.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>1 universal selector</li>
+									<li>1 attribute selector</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 0</span>
+							<p>*[type:checkbox]</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-08.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>1 pseudo-class</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 0</span>
+							<p>:only-of-type</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-09.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>1 element</li>
+									<li>1 class</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 1</span>
+							<p>li.myclass</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-10.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>1 element</li>
+									<li>1 attribute</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 1</span>
+							<p>li[attr]</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-11.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>2 elements</li>
+									<li>1 pseudo-class</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 2</span>
+							<p>li:nth-of-type(3n)~li</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-12.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>2 elements</li>
+									<li>1 attribute</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 1 - 2</span>
+							<p>form input[type=email]</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-13.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>1 element</li>
+									<li>1 class</li>
+									<li>1 pseudo-class</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 2 - 1</span>
+							<p>li.class:nth-of-type(3n)</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-14.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>1 element</li>
+									<li>1 class</li>
+									<li>1 attribute</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 2 - 1</span>
+							<p>input[type]:not(.class)</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-15.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>10 class / attribute <span class="item">pseudo-class</span></li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">0 - 10 - 0</span>
+							<p>.cl:nth-child(odd) .chk[type]...</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-16.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>1 ID selector</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">1 - 0 - 0</span>
+							<p>#myDiv</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-17.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>2 types</li>
+									<li>2 class / attribute</li>
+									<li>1 ID selector</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">1 - 2 - 2</span>
+							<p>#myDiv li.class a[href]</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-18.jpg" alt="#">
+							<div class="ttl ttl-2">
+								<ul>
+									<li>2 ID selectors</li>
+									<li>1 type selector</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">2 - 0 - 1</span>
+							<p>#divitis #myDiv a</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-19.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>inline style</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">1 - 0 - 0 - 0</span>
+							<p>style=""</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+			<div class="box">
+				<div class="frame">
+					<a href="#">
+						<div class="img">
+							<img src="images/img-20.jpg" alt="#">
+							<div class="ttl">
+								<ul>
+									<li>!important</li>
+								</ul>
+							</div>
+							<div class="mask"></div>
+						</div>
+						<div class="desc">
+							<span class="value">1 - 0 - 0 - 0 - 0</span>
+							<p>!important</p>
+						</div>
+					</a>
+				</div><!-- frame -->
+			</div><!-- box -->
+		</div><!-- container -->
+		<footer>
+			<div class="holder">
+				<section class="legend">
+					<div class="ttl"><h3><span>Legend</span></h3></div>
+					<ul>
+						<li>
+							<span>x-0-0:</span>
+							<p>The number of <strong>ID selectors</strong></p>
+						</li>
+						<li>
+							<span>0-x-0:</span>
+							<p>The number of <strong>class and attribute,</strong> and <strong>pseudo-selectors</strong></p>
+						</li>
+						<li>
+							<span>0-0-x:</span>
+							<p>The number of <strong>type</strong> and <strong>pseudo-elements</strong></p>
+						</li>
+						<li>
+							<span>*,+,&#62;,~:</span>
+							<p>The <strong>universal selector</strong> has no value. When combined with other selectors, they do not increase specificity.</p>
+						</li>
+						<li>
+							<span>:not(x):</span>
+							<p>The <strong>negation selector</strong> has no value, but the argument passed increases specificity</p>
+						</li>
+					</ul>
+				</section><!-- legend -->
+				<section class="about">
+					<div class="ttl"><h3><span>About</span></h3></div>
+					<p>The origin and sorting order of CSS helps browsers to determine which rules win out over others.</p>
+					<p>When one of those methods completely fails, there is a conflict as to which CSS rule should be applied. CSS has in place a way to deal with those conflicts: the specificity of the CSS selector.</p>
+					<p>The higher the specificity of a CSS selector, the greater the likelihood its declarations are used over another CSS rule's declarations.</p>
+				</section><!-- about -->
+				<strong class="logo"><a href="http://cssdevconference.com/">CSS Dev Conference</a></strong>
+			</div><!-- holder -->
+			<ul class="bottom-info">
+				<li>Illustrations by <strong><a href="http://twitter.com/@ericajdesign">Erica Jacobs</a></strong> </a></li>
+				<li>Design by <strong><a href="http://twitter.com/@ari4nne">Ari Stiles</a></strong></a> <strong>&amp; <a href="http://twitter.com/@teleject">Christopher Schmitt</a></strong></a></li>
+				<li>Printed at <strong><a href="http://twitter.com/@skylabltrpress">Skylab Letterpress</a></strong></li>
+				<li>From a Specificity Outlined by <a href="http://twitter.com/@estellevw">Estelle Weyl</a></li>
+			</ul>
+		</footer><!-- footer -->
+	</div><!-- wrapper -->
+</body>
 </html>
