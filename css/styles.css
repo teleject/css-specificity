@@ -100,7 +100,9 @@ header .block .box strong {
 	min-height:1px;
 }
 .container:after {
-	content:'';	display:block;	clear:both;
+	content:'';
+	display:block;
+	clear:both;
 }
 .container .box {
 	float:left;
@@ -184,7 +186,9 @@ footer .ttl {
 	margin:0 0 5px;
 }
 footer .ttl:after {
-	content:'';	display:block;	clear:both;
+	content:'';
+	display:block;
+	clear:both;
 }
 footer h3 {
 	border:1px solid #d0cecd;
@@ -499,4 +503,30 @@ footer .bottom-info a {color:#cbc9c7;}
 		font-size:14px;
 		line-height:19px;
 	} 
+}
+
+@keyframes heartbeat {
+	92% {
+		transform: scale(1, 1);
+		opacity: .9; 
+	}
+	94% {
+		transform: scale(1.2, 1.2);
+		opacity: 1; 
+	}
+	96% {
+		transform: scale(1, 1);
+		opacity: .8;
+	}
+	98% {
+		transform: scale(1.1, 1.1);
+		opacity: .8; 
+	}
+	100% {
+		transform: scale(1, 1);
+		opacity: .7;
+	}
+}
+a:hover img {
+	animation: heartbeat 1.5s infinite;
 }
