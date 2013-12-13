@@ -4,6 +4,7 @@ body{
 	font:12px/16px 'officsanboo', Helvetica, sans-serif;
 	background:#fff;
 	min-width:320px;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 img{border-style:none;}
 a{
@@ -96,8 +97,8 @@ header .block .box strong {
 /* end header */
 /* container */
 .container {
-	margin:0 -14px 0 -10px;
-	min-height:1px;
+	margin:0 -1.4em 0 -1em;
+	min-height:.1em;
 }
 .container:after {
 	content:'';
@@ -108,7 +109,7 @@ header .block .box strong {
 	float:left;
 	width:25%;
 }
-.container .box .frame {padding:10px 14px 15px;}
+.container .box .frame {padding:1em 1.4em 1.5em;}
 .container .box .img img {
 	vertical-align:top;
 	width:100%;
@@ -120,21 +121,22 @@ header .block .box strong {
 .container .box .img {position:relative;}
 .container .box .ttl {
 	position:absolute;
-	left:-6px;
-	top:-6px;
+	left:-.6em;
+	top:-.6em;
 	padding:1px;
 	background:#fff;
-	border:1px solid #231f20;
+	border:.1em solid #231f20;
 	z-index:2;
 }
 .container .box .ttl ul {
-	margin:0 -4px -4px 0;
-	padding:1px 5px 3px 4px;
+	margin:0 -.4em -.4em 0;
+	padding:.1em .5em .3em .4em;
 	list-style:none;
 	background:#231f20;
-	font:12px/15px 'officsanbol', Helvetica, sans-serif;
+	font:1em/1.3em 'officsanbol', Helvetica, sans-serif;
 	color:#fff;
 	overflow:hidden;
+	text-decoration: none;
 }
 .container .box .ttl .item {
 	display:block;
