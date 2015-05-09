@@ -83,13 +83,14 @@ header .block {
 header .block img {
 	float:left;
 	margin:2px 0 0;
+	max-width: 171px;
+
 }
 header .block .box {
 	overflow:hidden;
 	padding:50px 10px 0 4px;
 	font-size:18px;
 	line-height:22px;
-	max-width: 171px;
 
 }
 header .block .box strong {
@@ -411,7 +412,6 @@ footer .bottom-info a {color:#cbc9c7;}
 	}
 	header .block img {width:220px;}
 	header .block .box {
-		padding:64px 5px 0;
 		font-size:24px;
 		line-height:28px;
 	}
@@ -468,7 +468,7 @@ footer .bottom-info a {color:#cbc9c7;}
 	}
 	header .block img {width:120px;}
 	header .block .box {
-		padding:5px 10px;
+		padding:25px 10px 0;
 		font-size:18px;
 		line-height:22px;
 	}
